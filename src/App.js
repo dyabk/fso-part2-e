@@ -53,14 +53,11 @@ const App = ( props ) => {
       })
       .catch(error => {
         setErrorMessage(
-          `Note ${note.content} was already removed from server`
+          `Note '${note.content}' was already removed from server`
         )
         setTimeout(() => {
           setErrorMessage(null)
         }, 5000)
-        alert(
-          `the note ${note.content} was already deleted from server`
-        )
         setNotes(notes.filter(n => n.id !== id))
       })
   }
